@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/user_sign_up.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<div class="signUp">
+
+    <form action="/users/create" method="post" class="login">
+        <h2>Create Account</h2>
+
+        <div class="field">
+            <span class="fa fa-envelope"></span>
+            <input type="text" name="name" placeholder="Your name" required>
+        </div>
+
+        <div class="field">
+            <span class="fa fa-user"></span>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="field">
+            <span class="fa fa-lock"></span>
+            <input type="password" name="password" placeholder="enter your password" required>
+        </div>
+
+        <div class="field">
+            <span class="fa fa-lock"></span>
+            <input type="password" name="confirm_password" placeholder="Confirm your password" required>
+        </div>
+
+        <input type="submit" name="Sign Up" class="submit">
+
+        <span class="login-form-copy">Or sign up with</span>
+        <div class="social-icons">
+          
+            <a href="/users/auth/google"><div class="social-icon google" class ="submit">
+            <i class="fab fa-google"></i></div></a>
+          
+        </div>
+      <span class="logn-form-copy">Already have an account? <a href="/users/sign-in" class="login-form__sign-up">Login</a></span>
+
+    </form>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></script>

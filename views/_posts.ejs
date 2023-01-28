@@ -1,0 +1,58 @@
+
+
+<div id="post-<%=post._id%>" class="post-container">
+    <p>
+
+        <!-- new changes herer -->
+        <div class="card text-dark bg-info mb-3" style="width: 90%;">
+            
+            <div class="card-body">
+              <h5 class="card-title"><%=post.content%></h5>
+              <p class="card-text"><%=post.user.name%></p>
+              <% if (locals.user && locals.user.id==post.user.id){ %>
+                <a href="posts/delete/<%=post.id%>" class="btn btn-danger">Delete your post</a>
+              <%}%>
+
+             
+
+              <div class="card-footer">
+
+        <% if(locals.user){ %>
+
+            <form id="post-<%=post._id%>-comments-form" action="/comments/create" method="post" >
+                <input type="text" name="content" required placeholder="Add a comment" >
+                <input type="hidden" name="post" value="<%=post._id%>">
+                <input type="submit" class="btn btn-success" value="Add a comment">
+            </form>
+
+        <%}%>
+
+
+        <div class="post-comments-list card-footer">
+            <ul id="post-comments-<%=post._id%>">
+                <% for(comment of post.comments){ %>
+                    <%-  include('_comments'); -%>
+                    
+                <%}%>
+        
+            </ul>
+
+        </div>
+
+              </div>  
+              
+
+            </div>
+
+          </div>
+
+
+
+    </p>
+
+   
+</div>
+
+
+    
+

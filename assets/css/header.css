@@ -1,0 +1,29 @@
+header {
+  position: static;
+  top: 0;
+  background-image: linear-gradient(to right top, #a3bded, #95b2e3, #86a7da, #789cd0, #6991c7);
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
+  header a {
+    text-decoration: none; }
+  header h1 {
+    margin: auto 10px;
+    color: white; }
+  header ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    order: 2;
+    text-align: center;
+    margin-right: 20px; }
+    header ul li {
+      text-align: center;
+      list-style: none;
+      padding: 5px; }
+      header ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 520; }

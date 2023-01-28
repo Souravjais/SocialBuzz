@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat_box.css">
+<% if(locals.user){ %>
+<div class="container-fluid">
+    <div class="row no-gutters">
+       
+    <div class="col-9 no-gutters" width="100%">
+    <section id="feed_post">
+
+        <!-- new change begin -->
+
+       
+        <div class="card">
+            <div class="card-header">
+              Create a new post
+            </div>
+            <div class="card-body">
+                
+
+                    <form action="/posts/create" method="post" id="new_post_form">
+                        <textarea name="content" style="width: 100%; max-width: 100%;" placeholder="Heyy.. What's on your mind!! Share it with your friends"></textarea>
+                        <br>
+                        <br>
+                        <input type="submit" class="btn btn-primary" value="Add a new Post">
+                    </form>
+            
+               
+              
+            </div>
+          </div>
+
+         
+
+
+        <div id="posts-list-container">
+            <ul>
+                <% for(post of posts){ %>
+                    <%-  include('_posts'); -%>
+                <%}%>
+            </ul>
+        </div>
+
+    </section>
+</div>
+
+
+
+<section id="user_friends">
+    <ul>
+        <h3>Users</h3>
+        <% for(user of all_user){ %>
+
+                <a href="/users/profile/<%=user.id%>">
+                    <button type="button" class="btn btn-dark">
+                        <%= user.name %>
+                    </button>
+                <p></p>
+                </a>
+           
+        <%}%>
+    </ul>
+</section>
+
+
+
+
+
+</div>   
+<%}else{%>
+
+
+    <%-  include('user_sign_in'); -%>
+
+
+<%}%>    
+
+
+<script src="/js/home_posts.js"></script>

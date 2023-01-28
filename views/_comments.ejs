@@ -1,0 +1,49 @@
+
+  
+
+<div id="comment-<%=comment._id%>">
+    <!-- new changes begin -->
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <!-- <div class="col-md-4">
+            <h6 class="card-title"><%=comment.content%></h6>
+          </div> -->
+          
+            <div class="card-body">
+              
+              <span class="card-text"><%=comment.content%></span>
+              <p class="card-text">
+                  <small class="text-muted"><%=comment.user.name%></small>
+                  <% if(locals.user&&locals.user.id==comment.user.id){ %>
+                    <small>
+                        <a class="delete-comment-button" href="/comments/delete/<%=comment._id%>">
+                            <button type="button" class="btn btn-warning">Delete</button>
+                        </a>
+                    </small>
+                <%}%>
+                </p>
+            </div>
+          
+        </div>
+      </div>
+
+
+    <!-- new changes end -->
+
+
+<!-- 
+    <p>
+        <% if(locals.user&&locals.user.id==comment.user.id){ %>
+            <small>
+                <a class="delete-comment-button" href="/comments/delete/<%=comment._id%>">X</a>
+            </small>
+        <%}%>
+        <span><%=comment.content%></span>
+        <br>
+        <small><%=comment.user.name%></small>
+    </p> -->
+</div>
+
+
+
